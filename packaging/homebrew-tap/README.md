@@ -20,7 +20,7 @@ homebrew-tap/
 git clone https://github.com/shinyawave/homebrew-tap.git
 cd homebrew-tap
 mkdir -p Casks
-cp "/Users/xdepo/project/sda mac os/packaging/homebrew-tap/Casks/stewardauth.rb" Casks/
+cp <path-to-stewardauth-repo>/packaging/homebrew-tap/Casks/stewardauth.rb Casks/
 git add Casks/stewardauth.rb
 git commit -m "Add StewardAuth cask"
 git push
