@@ -1,0 +1,11 @@
+{
+  "encrypted": true,
+  "entries": [
+    {
+      "filename": "1234.maFile",
+      "steamid": 76561190000000123,
+      "encryption_iv": "srKysrKysrKysrKysrKysg==",
+      "encryption_salt": "oaGhoaGhoaGhoaGhoaGhoQ=="
+    }
+  ]
+}

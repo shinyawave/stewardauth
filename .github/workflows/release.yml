@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release-macos-arm64:
+    name: Build & Release (Apple Silicon)
+    runs-on: macos-14
+
+    permissions:
+      contents: write  # create the draft release and upload assets
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Set up Rust (stable, aarch64-apple-darwin)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
+
+      - name: Cache Rust build artifacts
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+          cache-on-failure: true
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build, sign updater artifact, and publish draft release
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Updater signing (Ed25519 — our own key, NOT Apple). Required so the
+          # generated latest.json carries a valid signature clients can verify.
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: 'StewardAuth ${{ github.ref_name }}'
+          releaseBody: |
+            StewardAuth ${{ github.ref_name }} — native macOS Apple Silicon Steam Desktop Authenticator.
+
+            **Requirements:** macOS 12 (Monterey) or later, Apple Silicon (M1–M5).
+
+            **First launch (one time):** the app is ad-hoc signed and not notarized,
+            so macOS Gatekeeper will warn on first open. Right-click StewardAuth in
+            Applications → Open → Open Anyway (or run `xattr -cr /Applications/StewardAuth.app`).
+            Later auto-updates install without this step.
+
+            Download `StewardAuth_*_aarch64.dmg`, open it, and drag StewardAuth to Applications.
+          releaseDraft: true
+          prerelease: false
+          args: --target aarch64-apple-darwin

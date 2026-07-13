@@ -1,0 +1,48 @@
+[package]
+name = "macsda"
+version = "0.1.0"
+description = "StewardAuth — native macOS Steam Desktop Authenticator"
+authors = ["StewardAuth (shinyawave)"]
+license = "AGPL-3.0-or-later"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "macsda_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+hmac = "0.12"
+sha1 = "0.10"
+base64 = "0.22"
+pbkdf2 = "0.12"
+aes = "0.8"
+cbc = { version = "0.1", features = ["alloc"] }
+steamguard = "0.18"  # production dep (Tasks 8/9); also cross-validated in totp tests
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls-native-roots", "socks", "blocking"] }
+keyring = { version = "3", features = ["apple-native"] }  # apple-native: real macOS Keychain (without it, keyring silently uses an in-memory mock that doesn't survive restarts)
+aes-gcm = "0.10"
+argon2 = "0.5"
+rand = "0.8"
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros"] }
+tauri-plugin-dialog = "2"
+zip = "8"  # Feature 3: bundle selected maFiles into a ZIP on export
+tempfile = "3"  # used in gather_from_zip (extract to temp dir) and dev-tests
+notify = "8.2.0"
+uuid = { version = "1", features = ["v4"] }
+tauri-plugin-updater = "2"  # self-update: fetch + verify + install from GitHub Releases
+tauri-plugin-process = "2"  # relaunch() after an update installs
+
+[dev-dependencies]
+
