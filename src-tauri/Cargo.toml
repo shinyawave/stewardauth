@@ -1,6 +1,6 @@
 [package]
 name = "stewardauth"
-version = "0.1.0"
+version = "0.1.1"
 description = "StewardAuth — native macOS Steam Desktop Authenticator"
 authors = ["StewardAuth (shinyawave)"]
 license = "AGPL-3.0-or-later"
