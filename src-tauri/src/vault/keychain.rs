@@ -1,10 +1,13 @@
 // SPDX-FileCopyrightText: 2026 shinyawave
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-//! Keychain-backed secret store for MacSDA.
+//! Legacy Keychain-backed secret store.
 //!
-//! Stores per-account secrets (serialised JSON) in the macOS Keychain under
-//! the service name `"MacSDA"` keyed by `steam_id`.
+//! Retired in favour of file-based storage; retained only for a one-time
+//! read of secrets written by pre-rename builds under the macOS Keychain
+//! service name `"MacSDA"` (keyed by `steam_id`), so existing users are not
+//! forced to re-login. The service string below is a legacy data key and must
+//! not change.
 
 use keyring::Entry;
 

@@ -144,8 +144,8 @@ fn transport(proxy: Option<&Proxy>) -> WebApiTransport {
 }
 
 /// A plausible Android device name so Steam's "Manage Devices" list shows a real
-/// phone model instead of "MacSDA". Picked pseudo-randomly (via a uuid byte) so
-/// each linked authenticator looks like a distinct device.
+/// phone model instead of the app name. Picked pseudo-randomly (via a uuid byte)
+/// so each linked authenticator looks like a distinct device.
 fn random_android_device_name() -> String {
     const MODELS: &[&str] = &[
         "Galaxy S23", "Galaxy S22", "Galaxy S21", "Galaxy A54", "Galaxy Note 20",
@@ -158,7 +158,7 @@ fn random_android_device_name() -> String {
 
 fn device_details() -> DeviceDetails {
     // platform/os values proven in steam/session.rs; friendly_name mimics a real
-    // Android phone so Steam Guard doesn't display "MacSDA".
+    // Android phone so Steam Guard's device list shows a phone, not the app name.
     DeviceDetails {
         friendly_name: random_android_device_name(),
         platform_type: EAuthTokenPlatformType::k_EAuthTokenPlatformType_MobileApp,

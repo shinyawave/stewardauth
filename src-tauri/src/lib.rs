@@ -161,7 +161,7 @@ pub fn run() {
                     }
                     Err(_) => {
                         // Best-effort: leave offset_secs at 0.
-                        eprintln!("[macsda] Steam time-sync failed; using local clock");
+                        eprintln!("[stewardauth] Steam time-sync failed; using local clock");
                     }
                 }
             });

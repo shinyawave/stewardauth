@@ -2606,37 +2606,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "macsda"
-version = "0.1.0"
-dependencies = [
- "aes 0.8.4",
- "aes-gcm",
- "argon2",
- "base64 0.22.1",
- "cbc",
- "hmac 0.12.1",
- "keyring",
- "notify",
- "pbkdf2 0.12.2",
- "rand 0.8.6",
- "reqwest 0.12.28",
- "serde",
- "serde_json",
- "sha1 0.10.6",
- "steamguard",
- "tauri",
- "tauri-build",
- "tauri-plugin-dialog",
- "tauri-plugin-opener",
- "tauri-plugin-process",
- "tauri-plugin-updater",
- "tempfile",
- "tokio",
- "uuid",
- "zip 8.6.0",
-]
-
-[[package]]
 name = "maplit"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4697,6 +4666,37 @@ dependencies = [
  "thiserror 1.0.69",
  "uuid",
  "zeroize",
+]
+
+[[package]]
+name = "stewardauth"
+version = "0.1.0"
+dependencies = [
+ "aes 0.8.4",
+ "aes-gcm",
+ "argon2",
+ "base64 0.22.1",
+ "cbc",
+ "hmac 0.12.1",
+ "keyring",
+ "notify",
+ "pbkdf2 0.12.2",
+ "rand 0.8.6",
+ "reqwest 0.12.28",
+ "serde",
+ "serde_json",
+ "sha1 0.10.6",
+ "steamguard",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-dialog",
+ "tauri-plugin-opener",
+ "tauri-plugin-process",
+ "tauri-plugin-updater",
+ "tempfile",
+ "tokio",
+ "uuid",
+ "zip 8.6.0",
 ]
 
 [[package]]
