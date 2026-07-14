@@ -2,6 +2,16 @@
 
 [Русский](README.ru.md) · **English** · [中文](README.zh.md)
 
+[![Latest release](https://img.shields.io/github/v/release/shinyawave/stewardauth?color=2ea043)](https://github.com/shinyawave/stewardauth/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/shinyawave/stewardauth/total?color=1f6feb)](https://github.com/shinyawave/stewardauth/releases)
+![Platform](https://img.shields.io/badge/macOS-12%2B%20·%20Apple%20Silicon-black?logo=apple)
+[![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%20·%20Rust-ffc131?logo=tauri&logoColor=white)](https://tauri.app)
+[![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/shinyawave/stewardauth?style=social)](https://github.com/shinyawave/stewardauth/stargazers)
+[![Telegram](https://img.shields.io/badge/Telegram-@StewardAuth-26A5E4?logo=telegram&logoColor=white)](https://t.me/StewardAuth)
+
+![StewardAuth — live Steam Guard codes and trade/market confirmations on macOS](.github/screenshots/stewardauth-main.webp)
+
 Native **macOS Steam Desktop Authenticator** for Apple Silicon — live Steam Guard codes, trade &amp; market confirmations, and multi-account management, in a fast menu-bar + Dock app.
 
 [**⚡ Quick install**](#quick-install-homebrew) · [**📦 Simple install**](#simple-install-dmg) · [**💬 Telegram**](https://t.me/StewardAuth)

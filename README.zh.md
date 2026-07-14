@@ -2,6 +2,16 @@
 
 [Русский](README.ru.md) · [English](README.md) · **中文**
 
+[![Latest release](https://img.shields.io/github/v/release/shinyawave/stewardauth?color=2ea043)](https://github.com/shinyawave/stewardauth/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/shinyawave/stewardauth/total?color=1f6feb)](https://github.com/shinyawave/stewardauth/releases)
+![Platform](https://img.shields.io/badge/macOS-12%2B%20·%20Apple%20Silicon-black?logo=apple)
+[![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%20·%20Rust-ffc131?logo=tauri&logoColor=white)](https://tauri.app)
+[![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/shinyawave/stewardauth?style=social)](https://github.com/shinyawave/stewardauth/stargazers)
+[![Telegram](https://img.shields.io/badge/Telegram-@StewardAuth-26A5E4?logo=telegram&logoColor=white)](https://t.me/StewardAuth)
+
+![StewardAuth —— macOS 上的实时 Steam Guard 验证码与交易/市场确认](.github/screenshots/stewardauth-main.webp)
+
 原生 **macOS Steam 桌面令牌（Steam Desktop Authenticator）**，专为 Apple Silicon 打造 —— 实时 Steam Guard 验证码、交易与市场确认、多账号管理。快速的菜单栏 + Dock 应用。
 
 [**⚡ 快速安装**](#快速安装-homebrew) · [**📦 简单安装**](#简单安装-dmg) · [**💬 Telegram**](https://t.me/StewardAuth)
